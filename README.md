@@ -80,6 +80,8 @@ This repository is hosted publicly at:
 
 https://github.com/TranshumanistAJ/HospitalManagment
 
+To deploy on Streamlit Cloud, set the main file path to `app.py`.
+
 A standard GitHub workflow for this project is:
 
 1. Initialize the repository:
@@ -106,11 +108,12 @@ git commit -m "Initial hospital management dashboard"
 git push -u origin main
 ```
 
-Streamlit deployment can be enabled by linking this public repository to Streamlit Cloud and selecting the `main` branch.
+Streamlit deployment can be enabled by linking this public repository to Streamlit Cloud, selecting the `main` branch, and using `app.py` as the main file path.
 
 ## 📝 Notes
 
-- The dashboard expects `database/hospital.db` to exist locally.
+- The dashboard builds or refreshes `database/hospital.db` automatically from the included `data/` CSV files when the file is missing or updated.
+- `requirements.txt` and `.streamlit/config.toml` support Streamlit Cloud deployment.
 - Re-run the appropriate loader script after any CSV data update.
 - The app uses the tables `patients`, `staff`, `staff_schedule`, and `services_weekly`.
 
